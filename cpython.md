@@ -34,18 +34,20 @@
     libbz2-dev
      介绍:
       high-quality block-sorting file compressor library- development(高质量的块排序文件压缩程序库-开发)
-         
 - _lzma
     liblzma-dev
-    XZ-format compression library(xz格式的压缩算法库)
-    注意: 5.6.0,5.6.1版本中存在xz安全漏洞,请安装低版本
-
+     介绍:
+      XZ-format compression library(xz格式的压缩算法库)
+      注意: 5.6.0,5.6.1版本中存在xz安全漏洞,请安装低版本
 - _gdbm _dbm
     libgdbm-dev libgdbm-compat-dev
-
-    dbm: kv型数据库  
-    libgdbm-dev: GNU dbm database routines(GNU数据库例程)
-    libgdbm-compat-dev: legacy support development files(遗留支持开发文件)
-    - 解决无dbm.h文件
+     介绍:
+      dbm: kv型数据库  
+      libgdbm-dev: GNU dbm database routines(GNU数据库例程)
+      libgdbm-compat-dev: legacy support development files(遗留支持开发文件)。解决无dbm.h文件问题    
 
 **注意** `apt-file`需要使用`apt install apt-file`安装，并且使用`apt-file update`更新数据库之后，才能使用。
+
+## cpython源码分析
+
+## 分析实例
