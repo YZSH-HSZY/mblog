@@ -20,6 +20,17 @@
 - cmake 一个简易的、生成makefile文件的项目构建工具
 - gdb GNU系列的调试器，进行源码调试的工具
 
+### 编译过程
+```sh
+./configure --help  # 查看帮助信息
+# 调试构建
+mkdir debug
+cd debug
+../configure --with-pydebug
+make
+make test
+```
+
 ### 编译过程中报缺少模块的错误
 
 一般是由于缺少头文件造成的，可以通过`find`查看有无对应头文件，无则需要安装开发库，可通过`apt-file`搜索可安装包，以下是一些模块对应缺少的依赖库
