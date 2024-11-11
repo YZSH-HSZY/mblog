@@ -10,6 +10,8 @@
 **注意** cpython在编译安装时，需要已有pyhton环境
 
 ## cpython编译
+(python官方开发构建文档)[https://devguide.python.org/getting-started/setup-building/#build-dependencies]
+
 在进行cpython的编译时，需要注意可能缺少相应的依赖项，可以使用`apt search`和`apt-file`命令找到包在机器上的安装名和文件存在与那些包中。
 
 这里列出一些需要的安装包
@@ -19,6 +21,12 @@
 - pkg-config 管理库的编译和链接标志的工具，在项目包含依赖库时有用
 - cmake 一个简易的、生成makefile文件的项目构建工具
 - gdb GNU系列的调试器，进行源码调试的工具
+
+**注意** 模块n/a(not available)有以下几种情况:
+1. 模块不支持当前 Python 版本：某些模块可能只支持特定的 Python 版本，如果你使用的 Python 版本不在支持范围内，模块可能无法编译。
+2. 缺少依赖库：某些模块可能依赖于特定的库或框架，如果这些库或框架未安装或不可用，模块可能无法编译。
+3. 编译错误：模块的源代码可能存在错误，导致编译失败。
+4. 不支持当前操作系统：某些模块可能只支持特定的操作系统，如果你使用的操作系统不在支持范围内，模块可能无法编译。
 
 ### 编译过程
 ```sh
@@ -30,6 +38,15 @@ cd debug
 make
 make test
 ```
+
+#### configure文件生成
+CPython 的 `configure` 脚本是使用 `GNU Autoconf` 从 `configure.ac` 生成
+你可以在更改 `configure.ac` 后，运行 `make regen-configure` 生成 `configure`/`pyconfig.h.in`/`aclocal.m4`
+
+**注意** 不同cpython版本使用的autoconf版本不同
+- 对于 Python 3.12 及更新版本，需要 `GNU Autoconf v2.71`
+- 对于 Python 3.11 及更早版本，需要 `GNU Autoconf v2.69`
+
 
 ### 编译过程中报缺少模块的错误
 
