@@ -4,7 +4,7 @@
 ## multiprocessing包
 python提供一个multiprocessing包用于在进行大量计算指令之类的高cpu资源请求时，移除GIL，以充分利用多核性能。
 
-**注意** 对于multiprocessing中pool的使用，与普通的Process有区别，相应的mamger不同，使用`multiprocessing.Manager().Queue()|Lock()`获取适用于pool的队列或锁
+**注意** 对于multiprocessing中pool的使用，与普通的Process有区别，相应的manger不同，使用`multiprocessing.Manager().Queue()|Lock()`获取适用于pool的队列或锁
 
 ## 多进程和多线程的区别
 以实际开发来说，python中多线程在同一个python解释器上，因此对于一些三方的类或组件，可以在同一个环境中进行访问。
