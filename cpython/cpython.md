@@ -76,6 +76,23 @@ CPython 的 `configure` 脚本是使用 `GNU Autoconf` 从 `configure.ac` 生成
 
 **注意** `apt-file`需要使用`apt install apt-file`安装，并且使用`apt-file update`更新数据库之后，才能使用。
 
+## cpython目录结构
+
+- `Doc`                 文档
+- `Grammar`             包含 Python 的 EBNF 语法文件
+- `Include`             cpython解释器头文件
+- `Lib`                 纯 Python 实现的标准库
+- `Misc`                独立目录，包含文档等
+- `Modules`             用 C 实现的标准库
+- `Objects`             所有内置类型的代码
+- `Mac`                 Mac 特定代码
+- `PC`                  Windows 特定代码
+- `PCbuild`             MSVC 构建文件
+- `Parser`              解析器相关的代码。包含 AST 节点定义
+- `Programs`            C 可执行文件的源代码，包括 CPython 解释器的 main 函数
+- `Python`              CPython core runtime。包括编译器、评估循环和各种内置模块
+- `Tools`               维护 Python 的工具
+
 ## cpython源码分析
 
 ## 分析实例
