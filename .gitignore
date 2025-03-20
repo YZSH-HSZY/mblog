@@ -163,3 +163,5 @@ cython_debug/
 cpython/*.txt
 mindspore/fourth-blog.md
 mindspore/day5.py
+
+**/tmp
