@@ -1,0 +1,83 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "linux_debug_convert_ipynb",
+            "type": "shell",
+            "command": "find ./ -iname \"*.ipynb\" | xargs /home/smartwork/miniconda3/envs/pelican_dev/bin/jupyter nbconvert --to markdown",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": "build",
+            "presentation": {
+                "reveal": "never"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "linux_debug_concentrated_md",
+            "type": "shell",
+            "command": "if [ -d content ]; then rm -r content; fi && mkdir -p content && find . -not -path \"*/content/*\" -type f -regex \".*\\.\\(md\\|png\\)$\" -exec cp --parents {} content/ \\;",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": "build",
+            "presentation": {
+                "reveal": "never"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "linux_debug_pelican_generate_html",
+            "type": "shell",
+            // "command": "/home/smartwork/miniconda3/envs/pelican_dev/bin/pelican content -D -s ./_scripts/publishconf.py -o output",
+            "command": "/home/smartwork/miniconda3/envs/pelican_dev/bin/pelican content -D  -o output",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": "build",
+            "presentation": {
+                "reveal": "never"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "linux_debug_action_html_page",
+            "type": "shell",
+            "command": "/home/smartwork/miniconda3/envs/pelican_dev/bin/pelican -l output",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": "build",
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "linux_debug_mblog_deploy",
+            "type": "shell",
+            "dependsOn": [
+                "linux_debug_convert_ipynb",
+                "linux_debug_concentrated_md",
+                "linux_debug_pelican_generate_html"
+            ],
+            "dependsOrder": "sequence",
+            "group": "build",
+            "presentation": {
+                "reveal": "never"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
+}
