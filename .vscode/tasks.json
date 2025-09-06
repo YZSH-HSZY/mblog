@@ -34,8 +34,8 @@
         {
             "label": "linux_debug_pelican_generate_html",
             "type": "shell",
-            // "command": "/home/smartwork/miniconda3/envs/pelican_dev/bin/pelican content -D -s ./_scripts/publishconf.py -o output",
-            "command": "/home/smartwork/miniconda3/envs/pelican_dev/bin/pelican content -D  -o output",
+            "command": "/home/smartwork/miniconda3/envs/pelican_dev/bin/pelican content -D -s ./_scripts/publishconf.py -o output",
+            // "command": "/home/smartwork/miniconda3/envs/pelican_dev/bin/pelican content -D  -o output",
             "options": {
                 "cwd": "${workspaceFolder}"
             },

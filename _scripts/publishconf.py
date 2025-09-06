@@ -9,14 +9,26 @@ sys.path.append(dirname(__file__))
 sys.path.append(os.curdir)
 
 import plugin_md_image
+import plugin_md_support_github
 
 PLUGINS = [plugin_md_image]
+PLUGINS = [plugin_md_image, plugin_md_support_github]
+# PLUGINS = [plugin_md_support_github, plugin_md_image]
+
+# MARKDOWN = {
+#     'extension_configs': {
+#         'markdown.extensions.codehilite': {'css_class': 'highlight'},
+#         'markdown.extensions.extra': {},
+#         'markdown.extensions.meta': {},
+#     },
+#     'output_format': 'html5',
+# }
 
 AUTHOR = 'YZSH-HSZY'
 SITENAME = 'Welcome to YZSH-HSZY blog.'
 
 # If your site is available via HTTPS, make sure SITEURL begins with https://
-SITEURL = "https://yzsh-hszy.github.io"
+# SITEURL = "https://yzsh-hszy.github.io"
 RELATIVE_URLS = False
 
 PATH = "content"
