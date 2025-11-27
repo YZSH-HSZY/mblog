@@ -1,5 +1,6 @@
 """
-the pelican plugin to support github flavored markdown
+the pelican plugin to support github flavored markdown, 
+support mulit meta line key handle(default is first line)
 """
 import collections
 import re
